@@ -1,5 +1,5 @@
 resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+  name        = "allow_ssh_gopal"
   description = "Allow ssh inbound traffic and all outbound traffic"
   #vpc_id      = aws_vpc.main.id
 ingress  {
@@ -18,12 +18,12 @@ egress  {
     cidr_blocks = ["0.0.0.0/0"]
 }
   tags = {
-    Name = "allow_ssh"
+    Name = "allow_ssh_gopal"
   }
 }
 
 resource "aws_security_group" "allow_http" {
-  name        = "allow_80"
+  name        = "allow_80_gopal"
   description = "Allow 80 inbound traffic and all outbound traffic"
   #vpc_id      = aws_vpc.main.id
 ingress  {
@@ -42,6 +42,6 @@ egress  {
     cidr_blocks = ["0.0.0.0/0"]
 }
   tags = {
-    Name = "allow_http"
+    Name = "allow_http_gopal"
   }
 }
