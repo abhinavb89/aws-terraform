@@ -7,6 +7,11 @@ resource "aws_instance" "web" {
     Name = "ec2 instance gopald"
   }
   lifecycle {
-    prevent_destroy = true
+    ignore_changes = [ 
+        user_data,
+        tags,
+        instance_type,
+        
+     ]
   }
 }
